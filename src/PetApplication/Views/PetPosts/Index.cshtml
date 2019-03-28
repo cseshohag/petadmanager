@@ -1,0 +1,96 @@
+﻿@model IEnumerable<PetApplication.Models.PetPost>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="container container-table"  >
+    <div id="bannerImage" style="margin-left:20%;">
+        <img src="~/Images/banner.jpg" />
+    </div>
+    <p class="btn-group btn-group-sm" role="group">
+        @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+    </p>
+    <table class="table table-responsive">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PetID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PetPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PetDetails)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.PetImageUrl)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.PetLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PostCreatedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PetColor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PostStatus)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pet.PetName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PetPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PetDetails)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.PetImageUrl)
+                        <img class="col-sm-2 embed-responsive" src="@Url.Content(item.PetImageUrl)" />
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.PetLocation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PostCreatedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PetColor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PostStatus)
+                </td>
+                <td class="btn-group btn-group-sm" role="group">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.PetPostID }, new { @class = "btn btn-primary" }) 
+                    @Html.ActionLink("Details", "Details", new { id = item.PetPostID }, new { @class = "btn btn-primary" }) 
+                    @Html.ActionLink("Delete", "Delete", new { id = item.PetPostID }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+
+@*This div is for Pet images*@
+@*@foreach (var item in Model){
+<div class="single-products-catagory clearfix">        
+         <a href="@Url.Action("Details", new { id = item.PetPostID })" >  
+                <img src="@Url.Content(item.PetImageUrl)" alt="">   
+                <div class="hover-content">
+                    <div class="line"></div>
+                    <p>From @Html.DisplayFor(modelItem => item.PetPrice)</p>
+                    <h4>@Html.DisplayFor(modelItem => item.Pet.PetName)</h4>
+                </div>        
+        </a>
+</div>
+}*@
+
+
+   

@@ -1,0 +1,28 @@
+﻿@model PetApplication.Models.PetType
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="container container-table">
+    <div id="bannerImage" style="margin-left:20%;">
+        <img src="~/Images/banner.jpg" />
+    </div>
+    <div>
+        <h4>PetType</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.PetTypeName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PetTypeName)
+            </dd>
+
+        </dl>
+    </div>
+    <p class="btn-group btn-group-sm" role="group">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.PetTypeID }, new { @class = "btn btn-primary" }) |
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+    </p>
+</div>

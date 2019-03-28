@@ -1,0 +1,37 @@
+﻿@model IEnumerable<PetApplication.Models.PetType>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="container container-table">
+    @*<h2>Index</h2>*@
+    <div id="bannerImage" style="margin-left:20%;">
+        <img src="~/Images/banner.jpg" />
+    </div>
+    <p class="btn-group btn-group-sm" role="group">
+        @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary btn" })
+    </p>
+    <table class="table table-responsive">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PetTypeName)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PetTypeName)
+                </td>
+                <td class="btn-group btn-group-sm" role="group">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.PetTypeID }, new { @class = "btn btn-primary" }) 
+                    @Html.ActionLink("Details", "Details", new { id = item.PetTypeID }, new { @class = "btn btn-primary" }) 
+                    @Html.ActionLink("Delete", "Delete", new { id = item.PetTypeID }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

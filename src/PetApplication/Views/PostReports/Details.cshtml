@@ -1,0 +1,37 @@
+﻿@model PetApplication.Models.PostReport
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="container container-table">
+    <div id="bannerImage" style="margin-left:20%;">
+        <img src="~/Images/banner.jpg" />
+    </div>
+    <div>
+        <h4>PostReport</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.PetPost.PetDetails)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PetPost.PetDetails)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Report)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Report)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ReportID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>

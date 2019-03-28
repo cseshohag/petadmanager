@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+<div class="container container-table">
+    <div id="bannerImage" style="margin-left:20%;">
+        <img src="~/Images/banner.jpg" />
+    </div>
+    <h2>@ViewBag.Title.</h2>
+    @*<h3>@ViewBag.Message</h3>*@
+
+    <p>
+        In computing clusters, there are dierent performance metrics, which often ap-
+        pear to be con
+        icting while being attempted to be optimized. For having such
+        con
+        icting cases along with experiencing existence of heterogeneous environ-
+        ment, it is often dicult for the cluster administrators to select the right number
+        and right combination of machines. As a remedy to this situation, in this thesis,
+        we develop a technique through which cluster administrators can select the right
+        set of machines to enhance cluster performance. In our solution, we integrate
+        both cooling energy consumption and empirical performance characterization of
+        clusters. To the best of our knowledge, existing studies do not integrate these
+        two simultaneously in solving many-objective optimization problem for clus-
+        ters. We exploit a many-objective optimization approach based on NSGA-III
+        algorithm to solve our cluster problem. Our technique attempts to simultane-
+        ously optimize many objectives such as computation time, computation energy,
+        cooling energy, and utilization. Subsequently, we demonstrate through both
+        real experimentation and simulation that our technique mostly performs bet-
+        ter than optimization approaches existing in the literature. In this study, we
+        integrate cooling energy while evaluating cluster performance. Cooling energy
+        consumption is one of the most signicant parts of total energy consumed by
+        clusters and similar distributed systems. However, little eort has been spent
+        so far to integrate the cooling energy in simulators that are used for simulating
+        the distributed systems. Therefore, we also perform integration of cooling en-
+        ergy consumption in a widely-known simulator of distributed systems namely
+        SimGrid.
+    </p>
+</div>

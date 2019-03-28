@@ -1,0 +1,126 @@
+﻿@model PetApplication.Models.PetPost
+
+@{
+    ViewBag.Title = "Details";
+}
+
+@*<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<div class="modal" id="postReport">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                
+                <h3 class="modal-title">Report</h3>
+                <a href="#" class="close" data-dismiss="modal">&times;</a>
+
+            </div>
+
+            <div class="modal-body">
+                
+                <textarea class="text-primary"></textarea>
+            </div>
+
+            <div class="modal-footer">
+                <a href="#" class="btn btn-primary" data-dismiss="modal">Cancel</a>
+                <input type="reset" value="Submit" class="btn btn-success" id="btnSubmit" />
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>*@
+
+<div class="container container-table">
+    <div id="bannerImage" style="margin-left:20%;">
+        @*<img src="~/Images/banner.jpg" />*@
+
+    </div>
+    <div style="margin-top:5%;">
+        <h4>Pet Details</h4>
+        <hr />
+        <dl class="dl-horizontal" style="margin-left:30% auto;">
+            @*<dt>
+                    @Html.DisplayNameFor(model => model.PetImageUrl)
+                </dt>*@
+
+            <dd>
+                @*@Html.DisplayFor(model => model.PetImageUrl)*@
+                <img @*height="150" width="150"*@ class="col-sm-5 embed-responsive" src="@Url.Content(Model.PetImageUrl)" />
+                @*@Html.DisplayFor(model => model.PetImageUrl)*@
+
+            </dd>
+        </dl>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.PetID)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Pet.PetName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PetPrice)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PetPrice)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PetDetails)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PetDetails)
+            </dd>
+
+
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PetLocation)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PetLocation)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PostCreatedDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PostCreatedDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PetColor)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PetColor)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PostStatus)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PostStatus)
+            </dd>
+
+        </dl>
+    </div>
+    <p class="btn-group btn-group-sm" role="group">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.PetPostID }, new { @class = "btn btn-primary" }) &nbsp;
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })&nbsp;
+        @Html.ActionLink("Report", "Create", "PostReports",new { id = Model.PetPostID}, new { @class = "btn btn-danger" })
+        
+        
+            @*<a href="#" class="btn btn-danger" data-toggle="modal" data-target="#postReport">Report</a>*@
+
+
+</p>
+</div>

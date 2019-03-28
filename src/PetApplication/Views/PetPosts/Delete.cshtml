@@ -1,0 +1,105 @@
+﻿@model PetApplication.Models.PetPost
+
+@{
+    ViewBag.Title = "Delete";
+}
+<div class="container container-table">
+    <div style="margin-top:220px;">
+
+    </div>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>PetPost</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.PetImageUrl)
+            </dt>
+
+            <dd>
+                @*@Html.DisplayFor(model => model.PetImageUrl)*@
+                <img height="150" width="150" class="col-sm-2 embed-responsive" src="@Url.Content(Model.PetImageUrl)" />
+                @*@Html.DisplayFor(model => model.PetImageUrl)*@
+
+            </dd>
+        </dl>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.PetID)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Pet.PetName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PetPrice)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PetPrice)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PetDetails)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PetDetails)
+            </dd>
+
+            @*<dt>
+                    @Html.DisplayNameFor(model => model.PetImageUrl)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PetImageUrl)
+                </dd>*@
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PetLocation)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PetLocation)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PostCreatedDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PostCreatedDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PetColor)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PetColor)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PostStatus)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PostStatus)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <div class="btn-group btn-group-sm" role="group">
+                    <input type="submit" value="Delete" class="btn btn-danger" />
+                    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+                </div>
+            </div>
+        }
+    </div>
+</div>
