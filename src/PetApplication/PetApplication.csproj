@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -201,6 +202,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PetAnimalsController.cs" />
     <Compile Include="Controllers\PetPostsController.cs" />
     <Compile Include="Controllers\PetsController.cs" />
     <Compile Include="Controllers\PetTypesController.cs" />
@@ -570,6 +572,11 @@
     <Content Include="Views\PostReports\Details.cshtml" />
     <Content Include="Views\PostReports\Edit.cshtml" />
     <Content Include="Views\PostReports\Index.cshtml" />
+    <Content Include="Views\PetAnimals\Create.cshtml" />
+    <Content Include="Views\PetAnimals\Delete.cshtml" />
+    <Content Include="Views\PetAnimals\Details.cshtml" />
+    <Content Include="Views\PetAnimals\Edit.cshtml" />
+    <Content Include="Views\PetAnimals\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
