@@ -40,10 +40,12 @@ namespace PetApplication.Models
         public DbSet<PetType> PetType { get; set; }
         public DbSet<Pet> Pet { get; set; }
 
+        public DbSet<PetAnimal> PetAnimal { get; set; }
+        
         public DbSet<PetPost> PetPost { get; set; }
 
         public DbSet<PostReport> PostReport { get; set; }
 
-        public System.Data.Entity.DbSet<PetApplication.Models.PetAnimal> PetAnimals { get; set; }
+        
     }
 }

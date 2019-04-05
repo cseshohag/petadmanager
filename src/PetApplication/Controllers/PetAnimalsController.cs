@@ -18,8 +18,8 @@ namespace PetApplication.Controllers
         // GET: PetAnimals
         public async Task<ActionResult> Index()
         {
-            var petAnimals = db.PetAnimals.Include(p => p.PetType);
-            return View(await petAnimals.ToListAsync());
+            var petAnimal = db.PetAnimal.Include(p => p.PetType);
+            return View(await petAnimal.ToListAsync());
         }
 
         // GET: PetAnimals/Details/5
@@ -29,7 +29,7 @@ namespace PetApplication.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PetAnimal petAnimal = await db.PetAnimals.FindAsync(id);
+            PetAnimal petAnimal = await db.PetAnimal.FindAsync(id);
             if (petAnimal == null)
             {
                 return HttpNotFound();
@@ -40,7 +40,7 @@ namespace PetApplication.Controllers
         // GET: PetAnimals/Create
         public ActionResult Create()
         {
-            ViewBag.PetTypeID = new SelectList(db.PetTypes, "PetTypeID", "PetTypeName");
+            ViewBag.PetTypeID = new SelectList(db.PetType, "PetTypeID", "PetTypeName");
             return View();
         }
 
@@ -53,12 +53,12 @@ namespace PetApplication.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.PetAnimals.Add(petAnimal);
+                db.PetAnimal.Add(petAnimal);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.PetTypeID = new SelectList(db.PetTypes, "PetTypeID", "PetTypeName", petAnimal.PetTypeID);
+            ViewBag.PetTypeID = new SelectList(db.PetType, "PetTypeID", "PetTypeName", petAnimal.PetTypeID);
             return View(petAnimal);
         }
 
@@ -69,12 +69,12 @@ namespace PetApplication.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PetAnimal petAnimal = await db.PetAnimals.FindAsync(id);
+            PetAnimal petAnimal = await db.PetAnimal.FindAsync(id);
             if (petAnimal == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.PetTypeID = new SelectList(db.PetTypes, "PetTypeID", "PetTypeName", petAnimal.PetTypeID);
+            ViewBag.PetTypeID = new SelectList(db.PetType, "PetTypeID", "PetTypeName", petAnimal.PetTypeID);
             return View(petAnimal);
         }
 
@@ -91,7 +91,7 @@ namespace PetApplication.Controllers
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            ViewBag.PetTypeID = new SelectList(db.PetTypes, "PetTypeID", "PetTypeName", petAnimal.PetTypeID);
+            ViewBag.PetTypeID = new SelectList(db.PetType, "PetTypeID", "PetTypeName", petAnimal.PetTypeID);
             return View(petAnimal);
         }
 
@@ -102,7 +102,7 @@ namespace PetApplication.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PetAnimal petAnimal = await db.PetAnimals.FindAsync(id);
+            PetAnimal petAnimal = await db.PetAnimal.FindAsync(id);
             if (petAnimal == null)
             {
                 return HttpNotFound();
@@ -115,8 +115,8 @@ namespace PetApplication.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            PetAnimal petAnimal = await db.PetAnimals.FindAsync(id);
-            db.PetAnimals.Remove(petAnimal);
+            PetAnimal petAnimal = await db.PetAnimal.FindAsync(id);
+            db.PetAnimal.Remove(petAnimal);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
