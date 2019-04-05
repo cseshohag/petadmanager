@@ -31,17 +31,16 @@ namespace PetApplication.Models
         [DisplayName("IsSold")]
         public Boolean IsSold { get; set; }
 
-        [DisplayName("Pet Type")]
-        public int PetTypeID { get; set; }
-
+        
         [DisplayName("Area")]
         public string Area { get; set; }
         [DisplayName("City")]
         public string City { get; set; }
         [DisplayName("Division")]
         public string Division { get; set; }
-        
 
+        [DisplayName("Pet Type")]
+        public int PetTypeID { get; set; }
         public virtual PetType PetType { get; set; }
         public string PetTypeName { get; set; }
     }
