@@ -8,6 +8,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PetApplication.Models;
+using System.IO;
 
 namespace PetApplication.Controllers
 {
@@ -49,12 +50,35 @@ namespace PetApplication.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,Name,ShortCode,Age,Color,ImageUrl,Quantity,Details,Price,PhoneNumber,Email,IsSold,Area,City,Division,PetTypeID,PetTypeName,CreateBy,CreateDate")] PetAnimal petAnimal)
+        public async Task<ActionResult> Create([Bind(Include = "Id,Name,ShortCode,Age,Color,ImageUrl,Quantity,Details,Price,PhoneNumber,Email,IsSold,Area,City,Division,PetTypeID,PetTypeName,CreateBy,CreateDate")] PetAnimal petAnimal, HttpPostedFileBase file)
         {
             if (ModelState.IsValid)
             {
-                db.PetAnimal.Add(petAnimal);
-                await db.SaveChangesAsync();
+                try
+                {
+                    String fileName = "";
+                    if (file != null)
+                    {
+                        fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
+                        string physicalPath = Server.MapPath("~/Images/PetImage/" + fileName);
+                        file.SaveAs(physicalPath);
+                        petAnimal.ImageUrl = @"~/" + @"Images/PetImage" + @"/" + fileName;
+                    }
+
+                    ViewBag.FileStatus = "File uploaded successfully.";
+                    petAnimal.CreateDate = DateTime.Now;
+                    db.PetAnimal.Add(petAnimal);
+                    await db.SaveChangesAsync();
+                }
+                catch (Exception)
+                {
+
+                    ViewBag.FileStatus = "Error while file uploading.";
+                }
+
+
+                //db.PetAnimal.Add(petAnimal);
+                //await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
