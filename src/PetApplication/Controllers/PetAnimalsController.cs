@@ -67,6 +67,7 @@ namespace PetApplication.Controllers
 
                     ViewBag.FileStatus = "File uploaded successfully.";
                     petAnimal.CreateDate = DateTime.Now;
+                    petAnimal.ShortCode = "Pet" + Guid.NewGuid().ToString();
                     db.PetAnimal.Add(petAnimal);
                     await db.SaveChangesAsync();
                 }
