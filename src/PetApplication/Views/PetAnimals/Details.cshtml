@@ -11,7 +11,7 @@
 
     </div>
     <div style="margin-top:5%;">
-        <h4>PetAnimal</h4>
+        @*<h4>PetAnimal</h4>*@
         <dl class="dl-horizontal" style="margin-left:30% auto;">
             @*<dt>
                     @Html.DisplayNameFor(model => model.PetImageUrl)
@@ -174,8 +174,14 @@
 
         </dl>
     </div>
-    <p>
+    @*<p>
         @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
         @Html.ActionLink("Back to List", "Index")
+    </p>*@
+
+    <p class="btn-group btn-group-sm" role="group">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary" }) &nbsp;
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })&nbsp;
+        @Html.ActionLink("Report", "Create", "PostReports", new { id = Model.Id }, new { @class = "btn btn-danger" })
     </p>
 </div>
