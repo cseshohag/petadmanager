@@ -11,7 +11,7 @@
     <p class="btn-group btn-group-sm" role="group">
         @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
     </p>
-    <table class="table">
+    @*<table class="table">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.PetType.PetTypeName)
@@ -135,5 +135,47 @@
             </tr>
         }
 
-    </table>
+    </table>*@
+
+    @*@foreach (var item in Model)
+    {
+        <div class="single-products-catagory clearfix">
+            <a href="@Url.Action("Details", "PetAnimals",new { id = item.Id })">
+                <img src="@Url.Content(item.ImageUrl)" alt="">
+                <div class="hover-content">
+                    <div class="line"></div>
+                    <p>From ৳ @Html.DisplayFor(modelItem => item.PetPrice)</p>
+                    <h4>@Html.DisplayFor(modelItem => item.Pet.PetName)</h4>
+                </div>
+            </a>
+        </div>
+    }*@
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="col-md-9">
+                <div class="amado-pro-catagory clearfix">
+                    @foreach (var item in Model)
+            {
+                        <div class="single-products-catagory clearfix">
+                            <a href="@Url.Action("Details", "PetAnimals",new { id = item.Id })">
+                                <img src="@Url.Content(item.ImageUrl)" alt="">
+                                <div class="hover-content">
+                                        <h4>@Html.DisplayFor(modelItem => item.Name)</h4>
+                                        <div class="line"></div>
+                                        <p>@*From*@ ৳ @Html.DisplayFor(modelItem => item.Price)</p>
+                                        <p>@Html.DisplayFor(modelItem => item.City)</p>
+                                        
+                                    </div>
+                            </a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
+
+    
