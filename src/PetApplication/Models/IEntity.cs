@@ -8,8 +8,9 @@ namespace PetApplication.Models
     {
         [Key]
         public int Id { get; set; }
-        [DisplayName("Post Created by:")]
+        [DisplayName("Created by:")]
         public int CreateBy { get; set; }
+        [DisplayName("Created Date")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy HH:mm}")]
         public DateTime CreateDate { get; set; }
     }

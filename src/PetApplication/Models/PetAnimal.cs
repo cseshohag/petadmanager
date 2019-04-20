@@ -39,7 +39,7 @@ namespace PetApplication.Models
         [DisplayName("Division")]
         public string Division { get; set; }
 
-        [DisplayName("Pet Type")]
+        [DisplayName("Type")]
         public int PetTypeID { get; set; }
         public virtual PetType PetType { get; set; }
         public string PetTypeName { get; set; }
