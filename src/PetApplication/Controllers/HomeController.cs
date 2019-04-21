@@ -5,6 +5,8 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
+using PagedList.Mvc;
 
 namespace PetApplication.Controllers
 {
@@ -18,10 +20,10 @@ namespace PetApplication.Controllers
         //}
 
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult Index(int? pageNumber)
         {
             ViewBag.Current = "Home";
-            return View(db.PetPost.ToList());
+            return View(db.PetPost.ToList().ToPagedList(pageNumber ?? 1,5));
         }
 
         public ActionResult About()
