@@ -11,19 +11,24 @@
             @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })
         </li>
         <li class="nav-item @(ViewBag.Current == "Contact" ? "active" : "")">
-        @Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })
+            @Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })
         </li>
         <li class="nav-item @(ViewBag.Current == "About" ? "active" : "")">
-        @Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })
+            @Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })
         </li>
-        <li class="nav-item @(ViewBag.Current == "PetPosts" ? "active" : "")">
-        @Html.ActionLink("Pet Post", "Index", "PetPosts", null, new { @class = "nav-link" })
+        <li class="nav-item @(ViewBag.Current == "PetAnimals" ? "active" : "")">
+            @Html.ActionLink("Posts", "Index", "PetAnimals", null, new { @class = "nav-link" })
         </li>
+        @*<li class="nav-item @(ViewBag.Current == "PetPosts" ? "active" : "")">
+            @Html.ActionLink("Pet Post", "Index", "PetPosts", null, new { @class = "nav-link" })
+        </li>*@
         <li class="nav-item @(ViewBag.Current == "Pets" ? "active" : "")">
-        @Html.ActionLink("Pet", "Index", "Pets",null, new { @class = "nav-link" })
+            @Html.ActionLink("Pet", "Index", "Pets",null, new { @class = "nav-link" })
         </li>
         <li class="nav-item @(ViewBag.Current == "PetTypes" ? "active" : "")">
-        @Html.ActionLink("Pet Type", "Index", "PetTypes", null, new { @class = "nav-link" })
+            @Html.ActionLink("Pet Type", "Index", "PetTypes", null, new { @class = "nav-link" })
         </li>
+        
+        
    
 
