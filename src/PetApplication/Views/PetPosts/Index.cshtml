@@ -10,7 +10,35 @@
     <p class="btn-group btn-group-sm" role="group">
         @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
     </p>
-    <table class="table table-responsive">
+
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="col-md-9">
+                <div class="amado-pro-catagory clearfix">
+                    @foreach (var item in Model)
+            {
+                        <div class="single-products-catagory clearfix">
+                            <a href="@Url.Action("Details", "PetPosts",new { id = item.PetPostID })">
+                                <img src="@Url.Content(item.PetImageUrl)" alt="">
+                                <div class="hover-content">
+                                    <h4>@Html.DisplayFor(modelItem => item.Pet.PetName)</h4>
+                                    <div class="line"></div>
+                                    <p>@*From*@ ৳ @Html.DisplayFor(modelItem => item.PetPrice)</p>
+                                    <p>@Html.DisplayFor(modelItem => item.PetLocation)</p>
+
+                                </div>
+                            </a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    @*<table class="table table-responsive">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.PetID)
@@ -21,9 +49,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.PetDetails)
             </th>
-            @*<th>
+            <th>
                     @Html.DisplayNameFor(model => model.PetImageUrl)
-                </th>*@
+                </th>
             <th>
                 @Html.DisplayNameFor(model => model.PetLocation)
             </th>
@@ -51,10 +79,10 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.PetDetails)
                 </td>
-                @*<td>
+                <td>
                         @Html.DisplayFor(modelItem => item.PetImageUrl)
                         <img class="col-sm-2 embed-responsive" src="@Url.Content(item.PetImageUrl)" />
-                    </td>*@
+                    </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.PetLocation)
                 </td>
@@ -75,7 +103,7 @@
             </tr>
         }
 
-    </table>
+    </table>*@
 </div>
 
 @*This div is for Pet images*@
