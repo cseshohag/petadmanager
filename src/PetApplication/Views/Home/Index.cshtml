@@ -141,8 +141,11 @@
     
 </div>
 
-<div class="pagination">
-    <li class="page-link">
-        @Html.PagedListPager(Model, pageNumber => Url.Action("Index", new { pageNumber }))
-    </li>
+<div >
+    <ul class="pagination">
+        <li class="page-link">
+            @Html.PagedListPager(Model, pageNumber => Url.Action("Index", new { pageNumber }))
+        </li>
+    </ul>
+    
 </div>
