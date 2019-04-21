@@ -23,7 +23,7 @@ namespace PetApplication.Controllers
         public ActionResult Index(string search,int? pageNumber)
         {
             ViewBag.Current = "Home";
-            return View(db.PetPost.Where(x => x.PetLocation.StartsWith(search) || search==null).ToList().ToPagedList(pageNumber ?? 1,5));
+            return View(db.PetAnimal.Where(x => x.City.StartsWith(search) || search==null).ToList().ToPagedList(pageNumber ?? 1,5));
         }
 
         public ActionResult About()

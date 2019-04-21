@@ -2,7 +2,8 @@
 @using PagedList.Mvc;
 
 @*@model IEnumerable<PetApplication.Models.PetPost>*@
-@model IPagedList<PetApplication.Models.PetPost>
+@*@model IPagedList<PetApplication.Models.PetPost>this line is for petPost model*@
+@model IPagedList<PetApplication.Models.PetAnimal>
 <div class="amado-pro-catagory clearfix">
     
         <!-- Single Catagory -->
@@ -126,12 +127,12 @@
     @foreach (var item in Model)
     {
         <div class="single-products-catagory clearfix">
-            <a href="@Url.Action("Details", "PetPosts",new { id = item.PetPostID })">
-                <img src="@Url.Content(item.PetImageUrl)" alt="">
+            <a href="@Url.Action("Details", "PetAnimals",new { id = item.Id })">
+                <img src="@Url.Content(item.ImageUrl)" alt="">
                 <div class="hover-content">
                     <div class="line"></div>
-                    <p>From ৳ @Html.DisplayFor(modelItem => item.PetPrice)</p>
-                    <h4>@Html.DisplayFor(modelItem => item.Pet.PetName)</h4>
+                    <p>From ৳ @Html.DisplayFor(modelItem => item.Price)</p>
+                    <h4>@Html.DisplayFor(modelItem => item.Name)</h4>
                 </div>
             </a>
         </div>
