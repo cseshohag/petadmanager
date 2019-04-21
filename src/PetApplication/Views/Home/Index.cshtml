@@ -1,4 +1,8 @@
-﻿@model IEnumerable<PetApplication.Models.PetPost>
+﻿@using PagedList;
+@using PagedList.Mvc;
+
+@*@model IEnumerable<PetApplication.Models.PetPost>*@
+@model IPagedList<PetApplication.Models.PetPost>
 <div class="amado-pro-catagory clearfix">
     
         <!-- Single Catagory -->
@@ -134,5 +138,11 @@
     }
 
 
+    
+</div>
 
+<div class="pagination">
+    <li class="page-link">
+        @Html.PagedListPager(Model, pageNumber => Url.Action("Index", new { pageNumber }))
+    </li>
 </div>
