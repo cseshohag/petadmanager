@@ -19,6 +19,7 @@ namespace PetApplication.Controllers
         // GET: PetAnimals
         public async Task<ActionResult> Index()
         {
+            ViewBag.Current = "PetAnimals";
             var petAnimal = db.PetAnimal.Include(p => p.PetType);
             return View(await petAnimal.ToListAsync());
         }
@@ -26,6 +27,7 @@ namespace PetApplication.Controllers
         // GET: PetAnimals/Details/5
         public async Task<ActionResult> Details(int? id)
         {
+            ViewBag.Current = "PetAnimals";
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -41,6 +43,7 @@ namespace PetApplication.Controllers
         // GET: PetAnimals/Create
         public ActionResult Create()
         {
+            ViewBag.Current = "PetAnimals";
             ViewBag.PetTypeID = new SelectList(db.PetType, "PetTypeID", "PetTypeName");
             return View();
         }
@@ -90,6 +93,7 @@ namespace PetApplication.Controllers
         // GET: PetAnimals/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {
+            ViewBag.Current = "PetAnimals";
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -123,6 +127,7 @@ namespace PetApplication.Controllers
         // GET: PetAnimals/Delete/5
         public async Task<ActionResult> Delete(int? id)
         {
+            ViewBag.Current = "PetAnimals";
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
