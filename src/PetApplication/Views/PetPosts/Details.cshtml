@@ -116,7 +116,8 @@
     <p class="btn-group btn-group-sm" role="group">
         @Html.ActionLink("Edit", "Edit", new { id = Model.PetPostID }, new { @class = "btn btn-primary" }) &nbsp;
         @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })&nbsp;
-        @Html.ActionLink("Report", "Create", "PostReports",new { id = Model.PetPostID}, new { @class = "btn btn-danger" })
+        @Html.ActionLink("Report", "Create", "PostReports", new { id = Model.PetPostID }, new { @class = "btn btn-danger" }) &nbsp;
+        @Html.ActionLink("Delete", "Delete", new { id = Model.PetPostID }, new { @class = "btn btn-danger" })
         
         
             @*<a href="#" class="btn btn-danger" data-toggle="modal" data-target="#postReport">Report</a>*@
