@@ -6,23 +6,22 @@
 
 
 <div class="container container-table">
-    <div id="bannerImage" style="margin-left:20%;">
+    @*<div id="bannerImage" style="margin-left:20%;">*@
         @*<img src="~/Images/banner.jpg" />*@
 
-    </div>
-    <div style="margin-top:5%;">
-        @*<h4>PetAnimal</h4>*@
-        <dl class="dl-horizontal" style="margin-left:30% auto;">
+    @*</div>*@
+    @*<div style="margin-top:5%;">
+        <dl class="dl-horizontal" style="margin-left:30% auto;">*@
             @*<dt>
                     @Html.DisplayNameFor(model => model.PetImageUrl)
                 </dt>*@
 
-            <dd>
+            @*<dd>*@
                 @*@Html.DisplayFor(model => model.PetImageUrl)*@
-                <img @*height="150" width="150"*@ class="col-sm-5 embed-responsive" src="@Url.Content(Model.ImageUrl)" />
+                @*<img  class="col-sm-5 embed-responsive" src="@Url.Content(Model.ImageUrl)" />*@
                 @*@Html.DisplayFor(model => model.PetImageUrl)*@
 
-            </dd>
+            @*</dd>
         </dl>
 
         <hr />
@@ -66,7 +65,7 @@
 
             <dd>
                 @Html.DisplayFor(model => model.Color)
-            </dd>
+            </dd>*@
 
             @*<dt>
                     @Html.DisplayNameFor(model => model.ImageUrl)
@@ -76,7 +75,7 @@
                     @Html.DisplayFor(model => model.ImageUrl)
                 </dd>*@
 
-            <dt>
+            @*<dt>
                 @Html.DisplayNameFor(model => model.Quantity)
             </dt>
 
@@ -146,7 +145,7 @@
 
             <dd>
                 @Html.DisplayFor(model => model.Division)
-            </dd>
+            </dd>*@
 
             @*<dt>
                 @Html.DisplayNameFor(model => model.PetTypeName)
@@ -156,7 +155,7 @@
                 @Html.DisplayFor(model => model.PetTypeName)
             </dd>*@
 
-            <dt>
+            @*<dt>
                 @Html.DisplayNameFor(model => model.CreateBy)
             </dt>
 
@@ -173,16 +172,118 @@
             </dd>
 
         </dl>
-    </div>
+    </div>*@
     @*<p>
         @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
         @Html.ActionLink("Back to List", "Index")
     </p>*@
 
-    <p class="btn-group btn-group-sm" role="group">
+    @*<p class="btn-group btn-group-sm" role="group">
         @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary" }) &nbsp;
         @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })&nbsp;
         @Html.ActionLink("Report", "Create", "PostReports", new { id = Model.Id }, new { @class = "btn btn-danger" }) &nbsp;
         @Html.ActionLink("Delete", "Delete", new { id = Model.Id }, new { @class = "btn btn-danger" })
-    </p>
+    </p>*@
+
+    @*New details start*@
+    <div class="single-product-area section-padding-100 clearfix">
+        <div class="container-fluid">     
+            <div class="row">
+                <div class="col-12 col-lg-7">
+                    <div class="single_product_thumb">
+                        <div id="product_details_slider" class="carousel slide" data-ride="carousel">                            
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <a class="gallery_img" href="@Url.Content(Model.ImageUrl)">
+                                        <img class="d-block w-100" src="@Url.Content(Model.ImageUrl)" alt="First slide">
+                                    </a>
+                                </div>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-12 col-lg-5">
+                    <div class="single_product_desc">
+                        <!-- Product Meta Data -->
+                        <div class="product-meta-data">
+                            <div class="line"></div>
+                            <p class="product-price">৳@Html.DisplayFor(model => model.Price)</p>
+                            <a href="">
+                                <h6>@Html.DisplayFor(model => model.Name)</h6>
+                            </a>
+                            <!-- Ratings & Review -->
+                            <div class="ratings-review mb-15 d-flex align-items-center justify-content-between">
+                                <div class="ratings">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </div>
+                                @*<div class="review">
+                                    <a href="#">Write A Review</a>
+                                </div>*@
+                            </div>
+                            <!-- Avaiable -->
+                            <p class="avaibility"><i class="fa fa-circle"></i> In Stock</p>
+                        </div>
+                        <div class="">
+                            <div class="short_overview my-2">
+                                <p>Type: @Html.DisplayFor(model => model.PetType.PetTypeName)</p>
+                            </div>
+                            <div class="short_overview my-2">
+                                <p>Age : @Html.DisplayFor(model => model.Age) months</p>
+                            </div>
+                            <div class="cart-btn d-flex mb-2">
+                                <p>Qty: @Html.DisplayFor(model => model.Quantity)</p>
+                            </div>
+                            <div class="short_overview my-2">
+                                <p>Color: @Html.DisplayFor(model => model.Color)</p>
+                            </div>
+                            <div class="short_overview my-2">
+                                <p>Details: @Html.DisplayFor(model => model.Details)</p>
+                            </div>
+                            <div class="short_overview my-2">
+                                <p style="padding:5 15px">Locatoin: @Html.DisplayFor(model => model.Area),@Html.DisplayFor(model => model.City),@Html.DisplayFor(model => model.Division) </p>                            
+                            </div> 
+                            <div class="short_overview my-2">
+                                <p onclick="toggle_visibility('foo');">Phone: ********<span id="foo" style="display:none;">@Html.DisplayFor(model => model.PhoneNumber)</span></p>
+                            </div>
+                            <div class="short_overview my-2">
+                                <p>Email: @Html.DisplayFor(model => model.Email)</p>
+                            </div>
+                        </div>
+                        <p class="btn-group btn-group-sm" role="group">
+                        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary" }) &nbsp;
+                        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })&nbsp;
+                        @Html.ActionLink("Report", "Create", "PostReports", new { id = Model.Id }, new { @class = "btn btn-danger" }) &nbsp;
+                        @Html.ActionLink("Delete", "Delete", new { id = Model.Id }, new { @class = "btn btn-danger" })
+                        </p>
+                        <!-- Add to Cart Form -->
+                        @*<form class="cart clearfix" method="post">
+                            
+                            <button type="submit" name="addtocart" value="5" class="btn amado-btn">Add to cart</button>
+                        </form>*@
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
+
+<script type="text/javascript">
+<!--
+    function toggle_visibility(id) {
+       var e = document.getElementById(id);
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+    }
+//-->
+</script>
