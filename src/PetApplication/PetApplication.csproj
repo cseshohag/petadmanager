@@ -422,6 +422,7 @@
     <Content Include="Images\PetImage\6a3b8106-0ff4-4d3e-adf5-b5626fbfbf8a.png" />
     <Content Include="Images\PetImage\8ed2f97a-d16d-45a0-a2b1-d2f0d3e2ea67.png" />
     <Content Include="Images\PetImage\eedbb8b9-fd09-47cf-94f0-ec790d927aca.jpg" />
+    <Content Include="Images\PetImage\sold.jpg" />
     <Content Include="obj\Debug\PetApplication.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\PetApplication.dll" />
     <Content Include="obj\Debug\PetApplication.pdb" />
