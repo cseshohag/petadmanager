@@ -227,7 +227,14 @@
                                 </div>*@
                             </div>
                             <!-- Avaiable -->
-                            <p class="avaibility"><i class="fa fa-circle"></i> In Stock</p>
+                            @if(Model.IsSold == false){
+                                <p class="avaibility"><i class="fa fa-circle"></i> In Stock</p>
+                            }
+                            else
+                            {
+                                <p ><img src="~/Images/PetImage/sold.jpg" /> </p>
+                            }
+
                         </div>
                         <div class="">
                             <div class="short_overview my-2">
@@ -253,6 +260,9 @@
                             </div>
                             <div class="short_overview my-2">
                                 <p>Email: @Html.DisplayFor(model => model.Email)</p>
+                            </div>
+                            <div class="short_overview my-2">
+                                <p>Create Date: @Html.DisplayFor(model => model.CreateDate)</p>
                             </div>
                         </div>
                         <p class="btn-group btn-group-sm" role="group">
