@@ -9,10 +9,10 @@
         <img src="~/Images/banner.jpg" />
     </div>
     
-    <div class="cart-table-area">
+    <div class="cart-table-area width">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-12 col-lg-8">
+                <div class="col-12">
                     <div class="checkout_details_area mt-50 clearfix">
 
                         <div class="cart-title">
@@ -37,7 +37,7 @@
                                 </div>
                                 <div class="col-12 mb-3">
                                     @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", placeholder = "Pet Name" } })
-                                    @Html.ValidationMessageFor(model => model.CreateBy, "", new { @class = "text-danger" })
+                                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
                                 </div>
                                 <div class="col-12 mb-3">
                                     @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control", placeholder = "Age of months" } })

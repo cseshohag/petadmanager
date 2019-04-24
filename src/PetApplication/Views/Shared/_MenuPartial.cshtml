@@ -3,7 +3,7 @@
     <ul class="navbar-nav ml-auto">        
         @*<li class="nav-item @(ViewBag.Current == "PetPosts" ? "active" : "")">@Html.ActionLink("Pet Post", "Index", "PetPosts")</li>*@
         <li class="@(ViewBag.Current == "PetAnimals" ? "active" : "")">@Html.ActionLink("Posts", "Index", "PetAnimals")</li>
-        <li class="@(ViewBag.Current == "Pets" ? "active" : "")">@Html.ActionLink("Pet", "Index", "Pets")</li>
+        @*<li class="@(ViewBag.Current == "Pets" ? "active" : "")">@Html.ActionLink("Pet", "Index", "Pets")</li>*@
         <li class="@(ViewBag.Current == "PetTypes" ? "active" : "")">@Html.ActionLink("Pet Type", "Index", "PetTypes")</li>
         
     </ul>
