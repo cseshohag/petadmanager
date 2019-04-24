@@ -6,16 +6,18 @@
 
 @*<h2>Edit</h2>*@
 <div class="container container-table">
-    <div id="bannerImage" style="margin-left:20%;">
-        <img src="~/Images/banner.jpg" />
-    </div>
+    
 
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
 
         <div class="form-horizontal">
-            <h4>PetAnimal</h4>
+            @*<h4>PetAnimal</h4>*@
+            <div id="bannerImage" style="margin-left:20%;margin-top:15px;">
+                @*<img src="~/Images/banner.jpg" />*@
+                <img class="col-sm-7 embed-responsive " src="@Url.Content(Model.ImageUrl)" />
+            </div>
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             @Html.HiddenFor(model => model.Id)
@@ -111,6 +113,15 @@
             </div>
 
             <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <div class="btn-group btn-group-sm" role="group">
+                        <input type="submit" value="Save" class="btn btn-success" />&nbsp;&nbsp;
+                        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
                 @Html.HiddenFor(model => model.Area, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.HiddenFor(model => model.Area, new { htmlAttributes = new { @class = "form-control" } })
@@ -168,16 +179,12 @@
                 </div>
             </div>
 
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Save" class="btn btn-default" />
-                </div>
-            </div>
+            
         </div>
     }
 
     <div>
-        @Html.ActionLink("Back to List", "Index")
+        
     </div>
 
     @section Scripts {
