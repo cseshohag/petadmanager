@@ -13,17 +13,17 @@ namespace PetApplication.Models
         [DisplayName("Short Code")]
         public string ShortCode { get; set; }
         [DisplayName("Age of Month")]
-        public int Age { get; set; }
+        public string Age { get; set; }
         [DisplayName("Pet Color")]
         public string Color { get; set; }
         [DisplayName("Image")]
         public string ImageUrl { get; set; }
         [DisplayName("Quantity")]
-        public int Quantity { get; set; }
+        public string Quantity { get; set; }
         [DisplayName("Details")]
         public string Details { get; set; }
         [DisplayName("Price")]
-        public decimal Price { get; set; }
+        public string Price { get; set; }
         [DisplayName("Phone Number")]
         public string PhoneNumber { get; set; }
         [DisplayName("Email")]
