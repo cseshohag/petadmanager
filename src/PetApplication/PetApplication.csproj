@@ -278,6 +278,22 @@
     <Compile Include="Migrations\201904051339505_CreatePetAnimalDbSet.Designer.cs">
       <DependentUpon>201904051339505_CreatePetAnimalDbSet.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904241058008_ChangeAgeType.cs" />
+    <Compile Include="Migrations\201904241058008_ChangeAgeType.Designer.cs">
+      <DependentUpon>201904241058008_ChangeAgeType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904241204478_ChangeIntValueToString.cs" />
+    <Compile Include="Migrations\201904241204478_ChangeIntValueToString.Designer.cs">
+      <DependentUpon>201904241204478_ChangeIntValueToString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904241206499_ChangeCreatedByToString.cs" />
+    <Compile Include="Migrations\201904241206499_ChangeCreatedByToString.Designer.cs">
+      <DependentUpon>201904241206499_ChangeCreatedByToString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904241208012_ChangeCreatedByToString2.cs" />
+    <Compile Include="Migrations\201904241208012_ChangeCreatedByToString2.Designer.cs">
+      <DependentUpon>201904241208012_ChangeCreatedByToString2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -690,6 +706,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904051339505_CreatePetAnimalDbSet.resx">
       <DependentUpon>201904051339505_CreatePetAnimalDbSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904241058008_ChangeAgeType.resx">
+      <DependentUpon>201904241058008_ChangeAgeType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904241204478_ChangeIntValueToString.resx">
+      <DependentUpon>201904241204478_ChangeIntValueToString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904241206499_ChangeCreatedByToString.resx">
+      <DependentUpon>201904241206499_ChangeCreatedByToString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904241208012_ChangeCreatedByToString2.resx">
+      <DependentUpon>201904241208012_ChangeCreatedByToString2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\PetApplication.Migrations.AddDisplayName.resources" />
     <EmbeddedResource Include="obj\Debug\PetApplication.Migrations.AddDisplayNameForAllModel.resources" />
