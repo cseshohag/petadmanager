@@ -9,7 +9,7 @@
         <img src="~/Images/banner.jpg" />
     </div>
     <p class="btn-group btn-group-sm" role="group">
-        @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary btn" })
+        @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-dark" })
     </p>
     <table class="table table-responsive">
         <tr>
@@ -26,8 +26,8 @@
                     @Html.DisplayFor(modelItem => item.PetTypeName)
                 </td>
                 <td class="btn-group btn-group-sm" role="group">
-                    @Html.ActionLink("Edit", "Edit", new { id = item.PetTypeID }, new { @class = "btn btn-primary" }) 
-                    @Html.ActionLink("Details", "Details", new { id = item.PetTypeID }, new { @class = "btn btn-primary" }) 
+                    @Html.ActionLink("Edit", "Edit", new { id = item.PetTypeID }, new { @class = "btn btn-dark" }) 
+                    @Html.ActionLink("Details", "Details", new { id = item.PetTypeID }, new { @class = "btn btn-dark" }) 
                     @Html.ActionLink("Delete", "Delete", new { id = item.PetTypeID }, new { @class = "btn btn-danger" })
                 </td>
             </tr>
