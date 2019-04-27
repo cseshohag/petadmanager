@@ -33,10 +33,13 @@
                 <div class="col-12">
                     <div class="search-content">
                         @*<form action="#" method="get">*@
-                        @using (Html.BeginForm("Index","Home",FormMethod.Get))
+                        @using (Html.BeginForm("Index", "Home", FormMethod.Get))
                         {
                             @*<input type="search" name="search" id="search" placeholder="Type your keyword...">*@
-                            @Html.TextBox("search")
+                            <b>Search by: </b> @Html.RadioButton("searchBy", "City",true)<text>City</text>
+                            @Html.RadioButton("searchBy", "Division")<text>Division</text>
+                            @Html.RadioButton("searchBy", "Price")<text>Price</text>
+                            @Html.TextBox("search", null, new { @id = "search", @placeholder = "Search your pet by Name, Type, Color, Area, City, Price, Division ..." })
                             <button type="submit" value="Search"><img src="~/Theme/img/core-img/search.png" alt=""></button>
                         }
                         @*</form>*@
