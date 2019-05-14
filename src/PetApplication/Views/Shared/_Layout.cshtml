@@ -33,12 +33,42 @@
                 <div class="col-12">
                     <div class="search-content">
                         @*<form action="#" method="get">*@
+                        
                         @using (Html.BeginForm("Index", "Home", FormMethod.Get))
                         {
                             @*<input type="search" name="search" id="search" placeholder="Type your keyword...">*@
-                            <b>Search by: </b> @Html.RadioButton("searchBy", "City",true)<text>City</text>
-                            @Html.RadioButton("searchBy", "Division")<text>Division</text>
-                            @Html.RadioButton("searchBy", "Price")<text>Price</text>
+                            @*<div class="radio-inline">
+                                <b>Search by: </b> @Html.RadioButton("searchBy", "City", true)<text>City</text>
+                                @Html.RadioButton("searchBy", "Division")<text>Division</text>
+                                @Html.RadioButton("searchBy", "Price")<text>Price</text>
+                            </div>*@
+                            <label class="marginLeft" style="margin-inline-start: 25%;">
+                                <label class="radio-inline">
+                                    <input type="radio" name="searchBy" value="Type" checked>Type
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="searchBy" value="Price" checked>Price
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="searchBy" value="Division" checked>Division
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="searchBy" value="City" checked>City
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="searchBy" value="Name" checked>Name
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="searchBy" value="Color" checked>Color
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="searchBy" value="Area" checked>Area
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="searchBy" value="Age" checked>Age
+                                </label>
+                            </label>
+
                             @Html.TextBox("search", null, new { @id = "search", @placeholder = "Search your pet by Name, Type, Color, Area, City, Price, Division ..." })
                             <button type="submit" value="Search"><img src="~/Theme/img/core-img/search.png" alt=""></button>
                         }
