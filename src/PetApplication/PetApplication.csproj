@@ -294,6 +294,10 @@
     <Compile Include="Migrations\201904241208012_ChangeCreatedByToString2.Designer.cs">
       <DependentUpon>201904241208012_ChangeCreatedByToString2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905160446268_addPetReportClass.cs" />
+    <Compile Include="Migrations\201905160446268_addPetReportClass.Designer.cs">
+      <DependentUpon>201905160446268_addPetReportClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -303,6 +307,7 @@
     <Compile Include="Models\PetAnimal.cs" />
     <Compile Include="Models\PetPost.cs" />
     <Compile Include="Models\PetType.cs" />
+    <Compile Include="Models\PetReport.cs" />
     <Compile Include="Models\PostReport.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
@@ -718,6 +723,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904241208012_ChangeCreatedByToString2.resx">
       <DependentUpon>201904241208012_ChangeCreatedByToString2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905160446268_addPetReportClass.resx">
+      <DependentUpon>201905160446268_addPetReportClass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\PetApplication.Migrations.AddDisplayName.resources" />
     <EmbeddedResource Include="obj\Debug\PetApplication.Migrations.AddDisplayNameForAllModel.resources" />

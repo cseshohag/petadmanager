@@ -45,7 +45,8 @@ namespace PetApplication.Models
         public DbSet<PetPost> PetPost { get; set; }
 
         public DbSet<PostReport> PostReport { get; set; }
+        public DbSet<PetReport> PetReport { get; set; }
 
-        
+
     }
 }
