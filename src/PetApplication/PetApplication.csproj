@@ -212,6 +212,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PetAnimalsController.cs" />
     <Compile Include="Controllers\PetPostsController.cs" />
+    <Compile Include="Controllers\PetReportsController.cs" />
     <Compile Include="Controllers\PetsController.cs" />
     <Compile Include="Controllers\PetTypesController.cs" />
     <Compile Include="Controllers\PostReportsController.cs" />
@@ -658,6 +659,11 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\PetAnimals\Details - Copy.cshtml" />
+    <Content Include="Views\PetReports\Create.cshtml" />
+    <Content Include="Views\PetReports\Delete.cshtml" />
+    <Content Include="Views\PetReports\Details.cshtml" />
+    <Content Include="Views\PetReports\Edit.cshtml" />
+    <Content Include="Views\PetReports\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
