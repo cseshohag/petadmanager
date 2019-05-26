@@ -3,38 +3,43 @@
 @{
     ViewBag.Title = "Delete";
 }
+<div class="container container-table">
+    <div id="bannerImage" style="margin-left:20%;">
+        <img src="~/Images/banner.jpg" />
+    </div>
+    
 
-<h2>Delete</h2>
+    <h3>Are you sure you want to delete this report?</h3>
+    <div>
+        @*<h4>PetReport</h4>*@
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.PetAminal.Name)
+            </dt>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>PetReport</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.PetAminal.Name)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.PetAminal.Name)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.PetAminal.Name)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Report)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Report)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Report)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Report)
-        </dd>
+        </dl>
 
-    </dl>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
+            <div class="btn-group btn-group-sm" role="group">
+                <input type="submit" value="Delete" class="btn btn-danger" /> &nbsp;&nbsp;
+                @Html.ActionLink("Back to List", "Index",null,new {@class="btn btn-dark" })
+            </div>
+        }
+    </div>
 </div>

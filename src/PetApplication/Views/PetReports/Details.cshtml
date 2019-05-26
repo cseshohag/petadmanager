@@ -3,32 +3,36 @@
 @{
     ViewBag.Title = "Details";
 }
+<div class="container container-table">
+    <div id="bannerImage" style="margin-left:20%;">
+        <img src="~/Images/banner.jpg" />
+    </div>
+    <h2>Report Details</h2>
 
-<h2>Details</h2>
+    <div>
+        @*<h4>PetReport</h4>*@
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.PetAminal.Name)
+            </dt>
 
-<div>
-    <h4>PetReport</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.PetAminal.Name)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.PetAminal.Name)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.PetAminal.Name)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Report)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Report)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Report)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Report)
-        </dd>
-
-    </dl>
+        </dl>
+    </div>
+    <p class="btn-group btn-group-sm" role="group">
+        @*@Html.ActionLink("Edit", "Edit", new { id = Model.ReportID }) |*@
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-dark" })
+    </p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ReportID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
