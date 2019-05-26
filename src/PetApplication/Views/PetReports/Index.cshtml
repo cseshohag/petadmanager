@@ -4,36 +4,42 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+@*<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.PetAminal.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Report)
-        </th>
-        <th></th>
-    </tr>
+</p>*@
+<div class="container container-table">
+    <div id="bannerImage" style="margin-left:20%;">
+        <img src="~/Images/banner.jpg" />
+    </div>
+    <table class="table table-striped">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PetAminal.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Report)
+            </th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.PetAminal.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Report)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ReportID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ReportID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ReportID })
-        </td>
-    </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PetAminal.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Report)
+                </td>
+                <td class="btn-group btn-group-sm" role="group">
+                    @*@Html.ActionLink("Edit", "Edit", new { id = item.ReportID }) |*@
+                    @Html.ActionLink("Details", "Details", new { id = item.ReportID }, new { @class = "btn btn-dark" }) &nbsp;&nbsp;
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ReportID }, new { @class = "btn btn-dark" })
+                </td>
+            </tr>
+        }
 
-</table>
+    </table>
+</div>
