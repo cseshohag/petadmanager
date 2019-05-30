@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 using PetApplication.Models;
 using System.IO;
+using System.Net.Mail;
 
 namespace PetApplication.Controllers
 {
@@ -149,6 +150,20 @@ namespace PetApplication.Controllers
             db.PetAnimal.Remove(petAnimal);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
+        }
+
+        public void SendEmail()
+        {
+            MailMessage mail = new MailMessage("wdxshohag@gmail.com", "sendTo", "mailSubject", "mailBody");
+            mail.From = new MailAddress("solaiman.shohag95@gmail.com", "nameEmail");
+            mail.IsBodyHtml = true; // necessary if you're using html email
+
+            NetworkCredential credential = new NetworkCredential("xxx@gmail.com", "xxxxx");
+            SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
+            smtp.EnableSsl = true;
+            smtp.UseDefaultCredentials = false;
+            smtp.Credentials = credential;
+            smtp.Send(mail);
         }
 
         protected override void Dispose(bool disposing)
