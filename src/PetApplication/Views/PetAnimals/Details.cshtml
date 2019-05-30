@@ -8,7 +8,7 @@
     <div class="single-product-area section-padding-100 clearfix">
         <div class="container-fluid">     
             <div class="row">
-                <div class="col-12 col-lg-7">
+                <div class="col-12 col-lg-10">
                     <div class="single_product_thumb">
                         <div id="product_details_slider" class="carousel slide" data-ride="carousel">                            
                             <div class="carousel-inner">
@@ -23,7 +23,7 @@
                 </div>
 
 
-                <div class="col-12 col-lg-5">
+                <div class="col-12 col-lg-7">
                     <div class="single_product_desc">
                         <!-- Product Meta Data -->
                         <div class="product-meta-data">
@@ -97,6 +97,21 @@
                         </form>*@
 
 
+                    </div>
+                </div>
+                <div class="col-12 col-lg-5">
+                    <div class="single_product_desc">
+                        <form method="post" action="SendEmail">
+                            <div class="container">
+                                <span class="form-control-static"> Receiver: </span> 
+                                <input class="form-control" type="text" name="receiver" /> <br/> 
+                                <span class="form-control-static"> Subject: </span> 
+                                <input class="form-control" type="text" name="subject" /> <br/> 
+                                <span class = "form-control-static" > Message: </span> 
+                                <input class="form-control" type="text" name="message"/> <br/> 
+                                <input class="btn btn-dark" type="submit" value="Send"/> 
+                            </div>
+                        </form> 
                     </div>
                 </div>
             </div>
