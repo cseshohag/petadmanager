@@ -218,85 +218,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201902170813005_InitialCreate.cs" />
-    <Compile Include="Migrations\201902170813005_InitialCreate.Designer.cs">
-      <DependentUpon>201902170813005_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201902170831053_changeUserTableName_ChangeUserIDName.cs" />
-    <Compile Include="Migrations\201902170831053_changeUserTableName_ChangeUserIDName.Designer.cs">
-      <DependentUpon>201902170831053_changeUserTableName_ChangeUserIDName.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201902250928469_addingPet_TYPE_PET_POST.cs" />
-    <Compile Include="Migrations\201902250928469_addingPet_TYPE_PET_POST.Designer.cs">
-      <DependentUpon>201902250928469_addingPet_TYPE_PET_POST.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201902250959454_AddDisplayName.cs" />
-    <Compile Include="Migrations\201902250959454_AddDisplayName.Designer.cs">
-      <DependentUpon>201902250959454_AddDisplayName.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201902251003415_AddDisplayNameForAllModel.cs" />
-    <Compile Include="Migrations\201902251003415_AddDisplayNameForAllModel.Designer.cs">
-      <DependentUpon>201902251003415_AddDisplayNameForAllModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201902251005286_AddDisplayNameForAllModel1.cs" />
-    <Compile Include="Migrations\201902251005286_AddDisplayNameForAllModel1.Designer.cs">
-      <DependentUpon>201902251005286_AddDisplayNameForAllModel1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201902251035103_PetTypeVirtualModel.cs" />
-    <Compile Include="Migrations\201902251035103_PetTypeVirtualModel.Designer.cs">
-      <DependentUpon>201902251035103_PetTypeVirtualModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201902260651191_addPetTypeName.cs" />
-    <Compile Include="Migrations\201902260651191_addPetTypeName.Designer.cs">
-      <DependentUpon>201902260651191_addPetTypeName.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201902260653281_addPetTypeName1.cs" />
-    <Compile Include="Migrations\201902260653281_addPetTypeName1.Designer.cs">
-      <DependentUpon>201902260653281_addPetTypeName1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201902260947523_PetAndPetNameAdd.cs" />
-    <Compile Include="Migrations\201902260947523_PetAndPetNameAdd.Designer.cs">
-      <DependentUpon>201902260947523_PetAndPetNameAdd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201902261008405_DateTimeFeildAdd.cs" />
-    <Compile Include="Migrations\201902261008405_DateTimeFeildAdd.Designer.cs">
-      <DependentUpon>201902261008405_DateTimeFeildAdd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903200905116_PostReportAdd.cs" />
-    <Compile Include="Migrations\201903200905116_PostReportAdd.Designer.cs">
-      <DependentUpon>201903200905116_PostReportAdd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903200919405_clearReport.cs" />
-    <Compile Include="Migrations\201903200919405_clearReport.Designer.cs">
-      <DependentUpon>201903200919405_clearReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903200926328_AddReport.cs" />
-    <Compile Include="Migrations\201903200926328_AddReport.Designer.cs">
-      <DependentUpon>201903200926328_AddReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904051339505_CreatePetAnimalDbSet.cs" />
-    <Compile Include="Migrations\201904051339505_CreatePetAnimalDbSet.Designer.cs">
-      <DependentUpon>201904051339505_CreatePetAnimalDbSet.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904241058008_ChangeAgeType.cs" />
-    <Compile Include="Migrations\201904241058008_ChangeAgeType.Designer.cs">
-      <DependentUpon>201904241058008_ChangeAgeType.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904241204478_ChangeIntValueToString.cs" />
-    <Compile Include="Migrations\201904241204478_ChangeIntValueToString.Designer.cs">
-      <DependentUpon>201904241204478_ChangeIntValueToString.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904241206499_ChangeCreatedByToString.cs" />
-    <Compile Include="Migrations\201904241206499_ChangeCreatedByToString.Designer.cs">
-      <DependentUpon>201904241206499_ChangeCreatedByToString.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904241208012_ChangeCreatedByToString2.cs" />
-    <Compile Include="Migrations\201904241208012_ChangeCreatedByToString2.Designer.cs">
-      <DependentUpon>201904241208012_ChangeCreatedByToString2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905160446268_addPetReportClass.cs" />
-    <Compile Include="Migrations\201905160446268_addPetReportClass.Designer.cs">
-      <DependentUpon>201905160446268_addPetReportClass.cs</DependentUpon>
+    <Compile Include="Migrations\201906141953119_Initial-Create-kajal.cs" />
+    <Compile Include="Migrations\201906141953119_Initial-Create-kajal.Designer.cs">
+      <DependentUpon>201906141953119_Initial-Create-kajal.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -309,7 +233,7 @@
     <Compile Include="Models\PetType.cs" />
     <Compile Include="Models\PetReport.cs" />
     <Compile Include="Models\PostReport.cs" />
-	<!--
+    <!--
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" /> -->
@@ -445,9 +369,6 @@
     <Content Include="Images\PetImage\8ed2f97a-d16d-45a0-a2b1-d2f0d3e2ea67.png" />
     <Content Include="Images\PetImage\eedbb8b9-fd09-47cf-94f0-ec790d927aca.jpg" />
     <Content Include="Images\PetImage\sold.jpg" />
-    <Content Include="obj\Debug\PetApplication.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\PetApplication.dll" />
-    <Content Include="obj\Debug\PetApplication.pdb" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -455,21 +376,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="bin\ApplicationInsights.config" />
-    <Content Include="bin\PetApplication.dll.config" />
-    <Content Include="bin\roslyn\csc.exe.config" />
-    <Content Include="bin\roslyn\csc.rsp" />
-    <Content Include="bin\roslyn\csi.rsp" />
-    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
-    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
-    <Content Include="bin\roslyn\vbc.exe.config" />
-    <Content Include="bin\roslyn\vbc.rsp" />
-    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
-    <Content Include="obj\Debug\CoreCompileInputs.cache" />
-    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <Content Include="obj\Debug\PetApplication.csproj.GenerateResource.Cache" />
-    <Content Include="obj\Debug\PetApplication.csprojResolveAssemblyReference.cache" />
-    <Content Include="obj\Release\CoreCompileInputs.cache" />
     <Content Include="Content\css\core-style.css.map" />
     <Content Include="Content\scss\_mixin.scss" />
     <Content Include="Content\scss\_responsive.scss" />
@@ -673,83 +579,15 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201902170813005_InitialCreate.resx">
-      <DependentUpon>201902170813005_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201902170831053_changeUserTableName_ChangeUserIDName.resx">
-      <DependentUpon>201902170831053_changeUserTableName_ChangeUserIDName.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201902250928469_addingPet_TYPE_PET_POST.resx">
-      <DependentUpon>201902250928469_addingPet_TYPE_PET_POST.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201902250959454_AddDisplayName.resx">
-      <DependentUpon>201902250959454_AddDisplayName.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201902251003415_AddDisplayNameForAllModel.resx">
-      <DependentUpon>201902251003415_AddDisplayNameForAllModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201902251005286_AddDisplayNameForAllModel1.resx">
-      <DependentUpon>201902251005286_AddDisplayNameForAllModel1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201902251035103_PetTypeVirtualModel.resx">
-      <DependentUpon>201902251035103_PetTypeVirtualModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201902260651191_addPetTypeName.resx">
-      <DependentUpon>201902260651191_addPetTypeName.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201902260653281_addPetTypeName1.resx">
-      <DependentUpon>201902260653281_addPetTypeName1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201902260947523_PetAndPetNameAdd.resx">
-      <DependentUpon>201902260947523_PetAndPetNameAdd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201902261008405_DateTimeFeildAdd.resx">
-      <DependentUpon>201902261008405_DateTimeFeildAdd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903200905116_PostReportAdd.resx">
-      <DependentUpon>201903200905116_PostReportAdd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903200919405_clearReport.resx">
-      <DependentUpon>201903200919405_clearReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903200926328_AddReport.resx">
-      <DependentUpon>201903200926328_AddReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904051339505_CreatePetAnimalDbSet.resx">
-      <DependentUpon>201904051339505_CreatePetAnimalDbSet.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904241058008_ChangeAgeType.resx">
-      <DependentUpon>201904241058008_ChangeAgeType.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904241204478_ChangeIntValueToString.resx">
-      <DependentUpon>201904241204478_ChangeIntValueToString.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904241206499_ChangeCreatedByToString.resx">
-      <DependentUpon>201904241206499_ChangeCreatedByToString.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904241208012_ChangeCreatedByToString2.resx">
-      <DependentUpon>201904241208012_ChangeCreatedByToString2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905160446268_addPetReportClass.resx">
-      <DependentUpon>201905160446268_addPetReportClass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="obj\Debug\PetApplication.Migrations.AddDisplayName.resources" />
-    <EmbeddedResource Include="obj\Debug\PetApplication.Migrations.AddDisplayNameForAllModel.resources" />
-    <EmbeddedResource Include="obj\Debug\PetApplication.Migrations.AddDisplayNameForAllModel1.resources" />
-    <EmbeddedResource Include="obj\Debug\PetApplication.Migrations.addingPet_TYPE_PET_POST.resources" />
-    <EmbeddedResource Include="obj\Debug\PetApplication.Migrations.addPetTypeName.resources" />
-    <EmbeddedResource Include="obj\Debug\PetApplication.Migrations.addPetTypeName1.resources" />
-    <EmbeddedResource Include="obj\Debug\PetApplication.Migrations.changeUserTableName_ChangeUserIDName.resources" />
-    <EmbeddedResource Include="obj\Debug\PetApplication.Migrations.DateTimeFeildAdd.resources" />
-    <EmbeddedResource Include="obj\Debug\PetApplication.Migrations.InitialCreate.resources" />
-    <EmbeddedResource Include="obj\Debug\PetApplication.Migrations.PetAndPetNameAdd.resources" />
-    <EmbeddedResource Include="obj\Debug\PetApplication.Migrations.PetTypeVirtualModel.resources" />
-  </ItemGroup>
-  <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201906141953119_Initial-Create-kajal.resx">
+      <DependentUpon>201906141953119_Initial-Create-kajal.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

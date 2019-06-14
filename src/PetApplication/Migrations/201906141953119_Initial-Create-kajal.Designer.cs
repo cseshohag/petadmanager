@@ -7,13 +7,13 @@ namespace PetApplication.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class ChangeCreatedByToString2 : IMigrationMetadata
+    public sealed partial class InitialCreatekajal : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangeCreatedByToString2));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreatekajal));
         
         string IMigrationMetadata.Id
         {
-            get { return "201904241208012_ChangeCreatedByToString2"; }
+            get { return "201906141953119_Initial-Create-kajal"; }
         }
         
         string IMigrationMetadata.Source

@@ -10,7 +10,6 @@ namespace PetApplication.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "PetApplication.Models.ApplicationDbContext";
         }
 
         protected override void Seed(PetApplication.Models.ApplicationDbContext context)
