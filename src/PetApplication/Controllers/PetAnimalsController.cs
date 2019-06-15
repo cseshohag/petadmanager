@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
 using System.Data.Entity;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Net;
 using System.Web;
@@ -13,6 +10,7 @@ using System.Net.Mail;
 
 namespace PetApplication.Controllers
 {
+    [Authorize]
     public class PetAnimalsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
