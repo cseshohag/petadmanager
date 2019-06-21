@@ -16,7 +16,8 @@ namespace PetApplication.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
         private readonly HostingEnvironment _appEnvironment;
 
-               
+              
+        [AllowAnonymous]
         [HttpGet]
         public ActionResult Index()
         {
@@ -69,6 +70,7 @@ namespace PetApplication.Controllers
         //}
 
         // GET: PetPosts/Create
+        [Authorize]
         [HttpGet]
         public ActionResult Create()
         {
@@ -82,6 +84,7 @@ namespace PetApplication.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "PetPostID,PetID,PetPrice,PetDetails,PetImageUrl,PetLocation,PostCreatedDat,PetColor,PostStatus")] PetPost petPost, HttpPostedFileBase file)
         {
@@ -118,6 +121,7 @@ namespace PetApplication.Controllers
 
         // GET: PetPosts/Edit/5
         [HttpGet]
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             ViewBag.Current = "PetPosts";
@@ -139,6 +143,7 @@ namespace PetApplication.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "PetPostID,PetID,PetPrice,PetDetails,PetImageUrl,PetLocation,PostCreatedDate,PetColor,PostStatus")] PetPost petPost, HttpPostedFileBase file)
         {
@@ -163,6 +168,7 @@ namespace PetApplication.Controllers
 
         // GET: PetPosts/Delete/5
         [HttpGet]
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             ViewBag.Current = "PetPosts";
@@ -179,6 +185,7 @@ namespace PetApplication.Controllers
         }
 
         // POST: PetPosts/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

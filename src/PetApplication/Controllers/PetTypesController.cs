@@ -10,11 +10,13 @@ using PetApplication.Models;
 
 namespace PetApplication.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class PetTypesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: PetTypes
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             ViewBag.Current = "PetTypes";
@@ -22,6 +24,7 @@ namespace PetApplication.Controllers
         }
 
         // GET: PetTypes/Details/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Details(int? id)
         {
             ViewBag.Current = "PetTypes";
@@ -38,6 +41,7 @@ namespace PetApplication.Controllers
         }
 
         // GET: PetTypes/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             ViewBag.Current = "PetTypes";
@@ -48,6 +52,7 @@ namespace PetApplication.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "PetTypeID,PetTypeName")] PetType petType)
         {
@@ -62,6 +67,7 @@ namespace PetApplication.Controllers
         }
 
         // GET: PetTypes/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             ViewBag.Current = "PetTypes";
@@ -81,6 +87,7 @@ namespace PetApplication.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "PetTypeID,PetTypeName")] PetType petType)
         {
@@ -94,6 +101,7 @@ namespace PetApplication.Controllers
         }
 
         // GET: PetTypes/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             ViewBag.Current = "PetTypes";
@@ -111,6 +119,7 @@ namespace PetApplication.Controllers
 
         // POST: PetTypes/Delete/5
         [HttpPost, ActionName("Delete")]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {

@@ -15,6 +15,7 @@ namespace PetApplication.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Pets
+        [AllowAnonymous]
         public ActionResult Index()
         {
             ViewBag.Current = "Pets";
@@ -22,6 +23,7 @@ namespace PetApplication.Controllers
         }
 
         // GET: Pets/Details/5
+        [AllowAnonymous]
         public ActionResult Details(int? id)
         {
             ViewBag.Current = "Pets";
@@ -39,6 +41,7 @@ namespace PetApplication.Controllers
 
         // GET: Pets/Create
         [HttpGet]
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.Current = "Pets";
@@ -51,6 +54,7 @@ namespace PetApplication.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "PetID,PetName,PetTypeID")] Pet pet)
         {
@@ -66,6 +70,7 @@ namespace PetApplication.Controllers
         }
 
         // GET: Pets/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             ViewBag.Current = "Pets";
@@ -87,6 +92,7 @@ namespace PetApplication.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "PetID,PetName,PetTypeID")] Pet pet)
         {
@@ -100,6 +106,7 @@ namespace PetApplication.Controllers
         }
 
         // GET: Pets/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             ViewBag.Current = "Pets";
@@ -116,6 +123,8 @@ namespace PetApplication.Controllers
         }
 
         // POST: Pets/Delete/5
+
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

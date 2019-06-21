@@ -10,12 +10,12 @@ using System.Net.Mail;
 
 namespace PetApplication.Controllers
 {
-    //[Authorize]
     public class PetAnimalsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: PetAnimals
+        [AllowAnonymous]
         public async Task<ActionResult> Index()
         {
             ViewBag.Current = "PetAnimals";
@@ -24,6 +24,7 @@ namespace PetApplication.Controllers
         }
 
         // GET: PetAnimals/Details/5
+        [AllowAnonymous]
         public async Task<ActionResult> Details(int? id)
         {
             ViewBag.Current = "PetAnimals";
@@ -40,6 +41,7 @@ namespace PetApplication.Controllers
         }
 
         // GET: PetAnimals/Create
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.Current = "PetAnimals";
@@ -51,6 +53,7 @@ namespace PetApplication.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "Id,Name,ShortCode,Age,Color,ImageUrl,Quantity,Details,Price,PhoneNumber,Email,IsSold,Area,City,Division,PetTypeID,PetTypeName,CreateBy,CreateDate")] PetAnimal petAnimal, HttpPostedFileBase file)
         {
@@ -90,6 +93,7 @@ namespace PetApplication.Controllers
         }
 
         // GET: PetAnimals/Edit/5
+        [Authorize]
         public async Task<ActionResult> Edit(int? id)
         {
             ViewBag.Current = "PetAnimals";
@@ -110,6 +114,7 @@ namespace PetApplication.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit([Bind(Include = "Id,Name,ShortCode,Age,Color,ImageUrl,Quantity,Details,Price,PhoneNumber,Email,IsSold,Area,City,Division,PetTypeID,PetTypeName,CreateBy,CreateDate")] PetAnimal petAnimal)
         {
@@ -124,6 +129,7 @@ namespace PetApplication.Controllers
         }
 
         // GET: PetAnimals/Delete/5
+        [Authorize]
         public async Task<ActionResult> Delete(int? id)
         {
             ViewBag.Current = "PetAnimals";
@@ -140,6 +146,7 @@ namespace PetApplication.Controllers
         }
 
         // POST: PetAnimals/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
@@ -150,6 +157,7 @@ namespace PetApplication.Controllers
             return RedirectToAction("Index");
         }
 
+        
         public void SendEmail()
         {
             MailMessage mail = new MailMessage("wdxshohag@gmail.com", "sendTo", "mailSubject", "mailBody");

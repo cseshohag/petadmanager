@@ -11,6 +11,7 @@ namespace PetApplication.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: PetReports
+        [AllowAnonymous]
         public async Task<ActionResult> Index()
         {
             var petReport = db.PetReport.Include(p => p.PetAminal);
@@ -18,6 +19,7 @@ namespace PetApplication.Controllers
         }
 
         // GET: PetReports/Details/5
+        [AllowAnonymous]
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
@@ -43,6 +45,7 @@ namespace PetApplication.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "ReportID,Id,Report")] PetReport petReport)
         {
@@ -58,6 +61,7 @@ namespace PetApplication.Controllers
         }
 
         // GET: PetReports/Edit/5
+        [Authorize]
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
@@ -77,6 +81,7 @@ namespace PetApplication.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit([Bind(Include = "ReportID,Id,Report")] PetReport petReport)
         {
@@ -91,6 +96,7 @@ namespace PetApplication.Controllers
         }
 
         // GET: PetReports/Delete/5
+        [Authorize]
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
@@ -106,6 +112,7 @@ namespace PetApplication.Controllers
         }
 
         // POST: PetReports/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
