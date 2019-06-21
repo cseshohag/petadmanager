@@ -10,7 +10,7 @@ using System.Net.Mail;
 
 namespace PetApplication.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class PetAnimalsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
