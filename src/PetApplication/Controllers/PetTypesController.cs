@@ -54,6 +54,7 @@ namespace PetApplication.Controllers
         [HttpPost]
         [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create([Bind(Include = "PetTypeID,PetTypeName")] PetType petType)
         {
             if (ModelState.IsValid)
@@ -89,6 +90,7 @@ namespace PetApplication.Controllers
         [HttpPost]
         [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit([Bind(Include = "PetTypeID,PetTypeName")] PetType petType)
         {
             if (ModelState.IsValid)
@@ -121,6 +123,7 @@ namespace PetApplication.Controllers
         [HttpPost, ActionName("Delete")]
         [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult DeleteConfirmed(int id)
         {
             ViewBag.Current = "PetTypes";
