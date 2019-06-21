@@ -38,6 +38,7 @@ namespace PetApplication.Controllers
         }
 
         // GET: PetTypes/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             ViewBag.Current = "PetTypes";
@@ -49,6 +50,7 @@ namespace PetApplication.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create([Bind(Include = "PetTypeID,PetTypeName")] PetType petType)
         {
             if (ModelState.IsValid)
@@ -62,6 +64,7 @@ namespace PetApplication.Controllers
         }
 
         // GET: PetTypes/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             ViewBag.Current = "PetTypes";
@@ -82,6 +85,7 @@ namespace PetApplication.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit([Bind(Include = "PetTypeID,PetTypeName")] PetType petType)
         {
             if (ModelState.IsValid)
@@ -94,6 +98,7 @@ namespace PetApplication.Controllers
         }
 
         // GET: PetTypes/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             ViewBag.Current = "PetTypes";
@@ -112,6 +117,7 @@ namespace PetApplication.Controllers
         // POST: PetTypes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult DeleteConfirmed(int id)
         {
             ViewBag.Current = "PetTypes";
