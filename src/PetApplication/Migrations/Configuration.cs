@@ -1,3 +1,5 @@
+using Microsoft.AspNet.Identity.EntityFramework;
+
 namespace PetApplication.Migrations
 {
     using System;
@@ -26,6 +28,8 @@ namespace PetApplication.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            context.Roles.AddOrUpdate(new IdentityRole("Admin"));
         }
     }
 }
