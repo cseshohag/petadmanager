@@ -10,6 +10,8 @@ using PetApplication.Models;
 using System.Net.Mail;
 using System.Configuration;
 using System.Net;
+using System.Web;
+using System.Net.Mime;
 
 namespace PetApplication
 {
@@ -18,7 +20,7 @@ namespace PetApplication
         public Task SendAsync(IdentityMessage message)
         {
             // Plug in your email service here to send an email.
-            //return Task.FromResult(0);
+            return Task.FromResult(0);
             var sender = new SmtpClient
             {
                 Port = 587,
@@ -28,7 +30,8 @@ namespace PetApplication
             };
             return sender.SendMailAsync(ConfigurationManager.AppSettings["Email"],
                 message.Destination, message.Subject, message.Body);
-            //return Task.Factory.StartNew(() => {
+            //return Task.Factory.StartNew(() =>
+            //{
             //    sendMail(message);
             //});
         }

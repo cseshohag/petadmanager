@@ -7,6 +7,8 @@ using System.Web.Mvc;
 using PetApplication.Models;
 using System.IO;
 using System.Net.Mail;
+using System.Web.Security;
+using Microsoft.AspNet.Identity;
 
 namespace PetApplication.Controllers
 {
@@ -15,7 +17,9 @@ namespace PetApplication.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: PetAnimals
-        [AllowAnonymous]
+        
+        //[AllowAnonymous]
+        [Authorize]
         public async Task<ActionResult> Index()
         {
             ViewBag.Current = "PetAnimals";
@@ -69,7 +73,7 @@ namespace PetApplication.Controllers
                         file.SaveAs(physicalPath);
                         petAnimal.ImageUrl = @"~/" + @"Images/PetImage" + @"/" + fileName;
                     }
-
+                    petAnimal.CreateBy = User.Identity.GetUserId();
                     ViewBag.FileStatus = "File uploaded successfully.";
                     petAnimal.CreateDate = DateTime.Now;
                     petAnimal.ShortCode = "Pet" + Guid.NewGuid().ToString();
