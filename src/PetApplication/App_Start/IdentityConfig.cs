@@ -26,7 +26,8 @@ namespace PetApplication
                 Port = 587,
                 Host = "smtp.gmail.com",
                 EnableSsl = true,
-                Credentials = new NetworkCredential(ConfigurationManager.AppSettings["Email"], ConfigurationManager.AppSettings["EmailPassword"])
+                Credentials = new NetworkCredential(ConfigurationManager.AppSettings["Email"],
+                    ConfigurationManager.AppSettings["Password"])
             };
             return sender.SendMailAsync(ConfigurationManager.AppSettings["Email"],
                 message.Destination, message.Subject, message.Body);
