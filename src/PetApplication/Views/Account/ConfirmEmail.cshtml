@@ -1,10 +1,14 @@
 ﻿@{
     ViewBag.Title = "Confirm Email";
 }
-
-<h2>@ViewBag.Title.</h2>
-<div>
-    <p>
-        Thank you for confirming your email. Please @Html.ActionLink("Click here to Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
-    </p>
+<div class="container container-table">
+    <div id="bannerImage" style="margin-left:20%;">
+        <img src="~/Images/banner.jpg" />
+    </div>
+    <h2>@ViewBag.Title.</h2>
+    <div>
+        <p>
+            Thank you for confirming your email. Please @Html.ActionLink("Click here to Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+        </p>
+    </div>
 </div>

@@ -46,7 +46,7 @@ namespace PetApplication.Models
 
         public DbSet<PostReport> PostReport { get; set; }
         public DbSet<PetReport> PetReport { get; set; }
-
+        public DbSet<Comment> Comment { get; set; }
 
     }
 }

@@ -1,0 +1,26 @@
+﻿@using Microsoft.AspNet.Identity
+
+    @*<ul class="nav navbar-nav navbar-right">        
+        <li class="@(ViewBag.Current == "PetPosts" ? "active" : "")">@Html.ActionLink("Pet Post", "Index", "PetPosts")</li>
+        <li class="@(ViewBag.Current == "Pets" ? "active" : "")">@Html.ActionLink("Pet", "Index", "Pets")</li>
+        <li class="@(ViewBag.Current == "PetTypes" ? "active" : "")">@Html.ActionLink("Pet Type", "Index", "PetTypes")</li>
+    </ul>*@
+
+    
+        
+        <li class="nav-item @(ViewBag.Current == "PetAnimals" ? "active" : "")">
+            @Html.ActionLink("Posts", "Index", "PetAnimals", null, new { @class = "nav-link" })
+        </li>
+        @*<li class="nav-item @(ViewBag.Current == "PetPosts" ? "active" : "")">
+            @Html.ActionLink("Pet Post", "Index", "PetPosts", null, new { @class = "nav-link" })
+        </li>
+        <li class="nav-item @(ViewBag.Current == "Pets" ? "active" : "")">
+            @Html.ActionLink("Pet", "Index", "Pets",null, new { @class = "nav-link" })
+        </li>*@
+        <li class="nav-item @(ViewBag.Current == "PetTypes" ? "active" : "")">
+            @Html.ActionLink("Pet Type", "Index", "PetTypes", null, new { @class = "nav-link" })
+        </li>
+        
+        
+   
+
