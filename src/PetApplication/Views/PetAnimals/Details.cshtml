@@ -4,130 +4,232 @@
     ViewBag.Title = "Details";
 }
 
-<div class="container container-table">
-    <div class="single-product-area section-padding-100 clearfix">
-        <div class="container-fluid">     
-            <div class="row">
-                <div class="col-12 col-lg-7">
-                    <div class="single_product_thumb">
-                        <div id="product_details_slider" class="carousel slide" data-ride="carousel">                            
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <a class="gallery_img" href="@Url.Content(Model.ImageUrl)">
-                                        <img class="d-block w-100" src="@Url.Content(Model.ImageUrl)" alt="First slide">
-                                    </a>
-                                </div>                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js"></script>
+<script src="https://js.pusher.com/4.0/pusher.min.js"></script>
+<style>
 
+    .user_name {
+        font-size: 14px;
+        font-weight: bold;
+    }
 
-                <div class="col-12 col-lg-5">
-                    <div class="single_product_desc">
-                        <!-- Product Meta Data -->
-                        <div class="product-meta-data">
-                            <div class="line"></div>
-                            <p class="product-price">৳@Html.DisplayFor(model => model.Price)</p>
-                            <a href="">
-                                <h6>@Html.DisplayFor(model => model.Name)</h6>
-                            </a>
-                            <!-- Ratings & Review -->
-                            <div class="ratings-review mb-15 d-flex align-items-center justify-content-between">
-                                <div class="ratings">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
+    .comments-list .media {
+        border-bottom: 1px dotted #ccc;
+    }
+</style>
+<div id="app">
+    <div class="container container-table">
+        <div class="single-product-area section-padding-100 clearfix">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-lg-7">
+                        <div class="single_product_thumb">
+                            <div id="product_details_slider" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <a class="gallery_img" href="@Url.Content(Model.ImageUrl)">
+                                            <img class="d-block w-100" src="@Url.Content(Model.ImageUrl)" alt="First slide">
+                                        </a>
+                                    </div>
                                 </div>
-                                @*<div class="review">
-                                    <a href="#">Write A Review</a>
-                                </div>*@
-                            </div>
-                            <!-- Avaiable -->
-                            @if(Model.IsSold == false){
-                                <p class="avaibility"><i class="fa fa-circle"></i> In Stock</p>
-                            }
-                            else
-                            {
-                                <p ><img src="~/Images/PetImage/sold.jpg" /> </p>
-                            }
-
-                        </div>
-                        <div class="">
-                            <div class="short_overview my-2">
-                                <p>Type: @Html.DisplayFor(model => model.PetType.PetTypeName)</p>
-                            </div>
-                            <div class="short_overview my-2">
-                                <p>Age : @Html.DisplayFor(model => model.Age) months</p>
-                            </div>
-                            <div class="cart-btn d-flex mb-2">
-                                <p>Qty: @Html.DisplayFor(model => model.Quantity)</p>
-                            </div>
-                            <div class="short_overview my-2">
-                                <p>Color: @Html.DisplayFor(model => model.Color)</p>
-                            </div>
-                            <div class="short_overview my-2">
-                                <p>Details: @Html.DisplayFor(model => model.Details)</p>
-                            </div>
-                            <div class="short_overview my-2">
-                                <p style="padding:5 15px">Locatoin: @Html.DisplayFor(model => model.Area),@Html.DisplayFor(model => model.City),@Html.DisplayFor(model => model.Division) </p>                            
-                            </div> 
-                            <div class="short_overview my-2">
-                                <p onclick="toggle_visibility('foo');">Phone: ********<span id="foo" style="display:none;">@Html.DisplayFor(model => model.PhoneNumber)</span></p>
-                            </div>
-                            <div class="short_overview my-2">
-                                <p>Email: @Html.DisplayFor(model => model.Email)</p>
-                            </div>
-                            <div class="short_overview my-2">
-                                <p>Create Date: @Html.DisplayFor(model => model.CreateDate)</p>
                             </div>
                         </div>
-                        <p class="btn-group btn-group-sm" role="group">
-                        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-dark" }) &nbsp;
-                        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-dark" })&nbsp;
-                        @Html.ActionLink("Report", "Create", "PetReports", new { id = Model.Id }, new { @class = "btn btn-danger" }) &nbsp;
-                        @Html.ActionLink("Delete", "Delete", new { id = Model.Id }, new { @class = "btn btn-danger" })
-                        </p>
-                        <!-- Add to Cart Form -->
-                        @*<form class="cart clearfix" method="post">
-                            
-                            <button type="submit" name="addtocart" value="5" class="btn amado-btn">Add to cart</button>
-                        </form>*@
-
-
                     </div>
-                </div>
-                <div class="col-12 col-lg-12">
-                    <div class="single_product_desc">
-                        <form method="post" action="SendEmail">
-                            <div class="container">
-                                <span class="form-control-static"> Receiver: </span> 
-                                <input class="form-control" type="text" name="receiver" /> <br/> 
-                                <span class="form-control-static"> Subject: </span> 
-                                <input class="form-control" type="text" name="subject" /> <br/> 
-                                <span class = "form-control-static" > Message: </span> 
-                                <input class="form-control" type="text" name="message"/> <br/> 
-                                <input class="btn btn-dark" type="submit" value="Send"/> 
+
+
+                    <div class="col-12 col-lg-5">
+                        <div class="single_product_desc">
+                            <!-- Product Meta Data -->
+                            <div class="product-meta-data">
+                                <div class="line"></div>
+                                <p class="product-price">৳@Html.DisplayFor(model => model.Price)</p>
+                                <a href="">
+                                    <h6>@Html.DisplayFor(model => model.Name)</h6>
+                                </a>
+                                <!-- Ratings & Review -->
+                                <div class="ratings-review mb-15 d-flex align-items-center justify-content-between">
+                                    <div class="ratings">
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                    </div>
+                                    @*<div class="review">
+                                        <a href="#">Write A Review</a>
+                                    </div>*@
+                                </div>
+                                <!-- Avaiable -->
+                                @if (Model.IsSold == false)
+                                {
+                                    <p class="avaibility"><i class="fa fa-circle"></i> In Stock</p>
+                                }
+                                else
+                                {
+                                    <p><img src="~/Images/PetImage/sold.jpg" /> </p>
+                                }
+
                             </div>
-                        </form> 
+                            <div class="">
+                                <div class="short_overview my-2">
+                                    <p>Type: @Html.DisplayFor(model => model.PetType.PetTypeName)</p>
+                                </div>
+                                <div class="short_overview my-2">
+                                    <p>Age : @Html.DisplayFor(model => model.Age) months</p>
+                                </div>
+                                <div class="cart-btn d-flex mb-2">
+                                    <p>Qty: @Html.DisplayFor(model => model.Quantity)</p>
+                                </div>
+                                <div class="short_overview my-2">
+                                    <p>Color: @Html.DisplayFor(model => model.Color)</p>
+                                </div>
+                                <div class="short_overview my-2">
+                                    <p>Details: @Html.DisplayFor(model => model.Details)</p>
+                                </div>
+                                <div class="short_overview my-2">
+                                    <p style="padding:5 15px">Locatoin: @Html.DisplayFor(model => model.Area),@Html.DisplayFor(model => model.City),@Html.DisplayFor(model => model.Division) </p>
+                                </div>
+                                <div class="short_overview my-2">
+                                    <p onclick="toggle_visibility('foo');">Phone: ********<span id="foo" style="display:none;">@Html.DisplayFor(model => model.PhoneNumber)</span></p>
+                                </div>
+                                <div class="short_overview my-2">
+                                    <p>Email: @Html.DisplayFor(model => model.Email)</p>
+                                </div>
+                                <div class="short_overview my-2">
+                                    <p>Create Date: @Html.DisplayFor(model => model.CreateDate)</p>
+                                </div>
+                            </div>
+                            <p class="btn-group btn-group-sm" role="group">
+                                @if (HttpContext.Current.User.Identity.IsAuthenticated)
+                                {@Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-dark" })} &nbsp;
+                                @if (HttpContext.Current.User.Identity.IsAuthenticated)
+                                {
+                                    @Html.ActionLink("Back to List", "Index", "Home", new { @class = "btn btn-dark" }) 
+                                }
+                                else
+                                {
+
+                                    @Html.ActionLink("Back", "Index", "Home", null, new { @class = "btn btn-dark" })
+                                }
+                                @Html.ActionLink("Report", "Create", "PetReports", new { id = Model.Id }, new { @class = "btn btn-danger" }) &nbsp;
+                                @if (HttpContext.Current.User.Identity.IsAuthenticated)
+                                {@Html.ActionLink("Delete", "Delete", new { id = Model.Id }, new { @class = "btn btn-danger" })}
+                            </p>
+                            <!-- Add to Cart Form -->
+                            @*<form class="cart clearfix" method="post">
+
+                                <button type="submit" name="addtocart" value="5" class="btn amado-btn">Add to cart</button>
+                            </form>*@
+
+
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-12">
+                        <div class="single_product_desc">
+                            @*<form method="post" action="SendEmail">
+            <div class="container">
+                    <span class="form-control-static"> Receiver: </span>
+                    <input class="form-control" type="text" name="receiver" /> <br/>
+                    <span class="form-control-static"> Subject: </span>
+                    <input class="form-control" type="text" name="subject" /> <br/>
+                    <span class = "form-control-static" > Message: </span>
+                    <input class="form-control" type="text" name="message"/> <br/>
+                    <input class="btn btn-dark" type="submit" value="Send"/>
+                </div>
+
+        </form>*@
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="page-header">
+                                            <h1><small class="pull-right">{{comments.length}} comments</small> Comments </h1>
+                                        </div>
+                                        <div class="comments-list">
+                                            <div class="media" v-for="com in comments">
+                                                <div class="media-body">
+                                                    <h4 class="media-heading user_name">{{com.Name}}</h4>
+                                                    {{com.Body}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <br />
+                                <p>Your Comment</p>
+                                <form onsubmit="return false;">
+                                    <input type="text" id="Name" placeholder="Your Name" v-model="comment.Name" class="form-control" />
+                                    <textarea rows="3" placeholder="Your Comment" id="Body" v-model="comment.Body" class="form-control"></textarea>
+                                    <button class="btn btn-dark" v-on:click="submit_comment()">save</button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 </div>
+<script>
+    var pusher = new Pusher('093c221464e0b9370411', {
+        cluster: 'ap1'
+    });
+    var my_channel = pusher.subscribe('asp_channel');
+    var app = new Vue({
+        el: '#app',
+        data: {
+            comments: [],
+            comment: {
+                Name: '',
+                Body: '',
+                PetAnimalId: @Model.Id
+            }
+        },
+        created: function () {
+            this.get_comments();
+            this.listen();
+        },
+        methods: {
+            get_comments: function () {
+                axios.get('@Url.Action("Comments", "PetAnimal", new { id = @Model.Id }, protocol: Request.Url.Scheme)')
+                  .then((response)=> {
 
+                      this.comments = response.data;
+
+                  });
+
+            },
+            listen: function () {
+                my_channel.bind("asp_event", (data) => {
+                    if (data.PetAnimalId == this.comment.PetAnimalId){
+                        this.comments.push(data);
+                    }
+
+
+                })
+            },
+            submit_comment: function(){
+                axios.post('@Url.Action("Comment", "PetAnimal", new {}, protocol: Request.Url.Scheme)', this.comment)
+                 .then((response)=> {
+                     this.comment.Name = '';
+                     this.comment.Body = '';
+                    alert("Comment Submitted");
+
+                 });
+            }
+        }
+    });
+</script>
 <script type="text/javascript">
 <!--
     function toggle_visibility(id) {
-       var e = document.getElementById(id);
-       if(e.style.display == 'block')
-          e.style.display = 'none';
-       else
-          e.style.display = 'block';
+        var e = document.getElementById(id);
+        if (e.style.display == 'block')
+            e.style.display = 'none';
+        else
+            e.style.display = 'block';
     }
 //-->
 </script>

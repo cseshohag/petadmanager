@@ -21,21 +21,21 @@ namespace PetApplication.Controllers
         {
             ViewBag.Current = "Home";
             if(searchBy=="Price")
-                return View(db.PetAnimal.Where(x => x.Price.StartsWith(search) || search==null).ToList().ToPagedList(pageNumber ?? 1,6));
+                return View(db.PetAnimal.Where(x => x.Price.StartsWith(search) || search==null).ToList().ToPagedList(pageNumber ?? 1,9));
             else if(searchBy == "Division")
-                return View(db.PetAnimal.Where(x => x.Division.StartsWith(search) || search == null).ToList().ToPagedList(pageNumber ?? 1, 6));
+                return View(db.PetAnimal.Where(x => x.Division.StartsWith(search) || search == null).ToList().ToPagedList(pageNumber ?? 1, 9));
             else if (searchBy == "Type")
-                return View(db.PetAnimal.Where(x => x.PetType.PetTypeName.StartsWith(search) || search == null).ToList().ToPagedList(pageNumber ?? 1, 6));
+                return View(db.PetAnimal.Where(x => x.PetType.PetTypeName.StartsWith(search) || search == null).ToList().ToPagedList(pageNumber ?? 1, 9));
             else if (searchBy == "Name")
-                return View(db.PetAnimal.Where(x => x.Name.StartsWith(search) || search == null).ToList().ToPagedList(pageNumber ?? 1, 6));
+                return View(db.PetAnimal.Where(x => x.Name.StartsWith(search) || search == null).ToList().ToPagedList(pageNumber ?? 1, 9));
             else if (searchBy == "Color")
-                return View(db.PetAnimal.Where(x => x.Color.StartsWith(search) || search == null).ToList().ToPagedList(pageNumber ?? 1, 6));
+                return View(db.PetAnimal.Where(x => x.Color.StartsWith(search) || search == null).ToList().ToPagedList(pageNumber ?? 1, 9));
             else if (searchBy == "Area")
-                return View(db.PetAnimal.Where(x => x.Area.StartsWith(search) || search == null).ToList().ToPagedList(pageNumber ?? 1, 6));
+                return View(db.PetAnimal.Where(x => x.Area.StartsWith(search) || search == null).ToList().ToPagedList(pageNumber ?? 1, 9));
             else if (searchBy == "Age")
-                return View(db.PetAnimal.Where(x => x.Age.StartsWith(search) || search == null).ToList().ToPagedList(pageNumber ?? 1, 6));
+                return View(db.PetAnimal.Where(x => x.Age.StartsWith(search) || search == null).ToList().ToPagedList(pageNumber ?? 1, 9));
             else
-                return View(db.PetAnimal.Where(x => x.City.StartsWith(search) || search == null).ToList().ToPagedList(pageNumber ?? 1, 6));
+                return View(db.PetAnimal.Where(x => x.City.StartsWith(search) || search == null).ToList().ToPagedList(pageNumber ?? 1, 9));
         }
 
         public ActionResult About()

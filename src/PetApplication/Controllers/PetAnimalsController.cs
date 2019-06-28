@@ -9,6 +9,8 @@ using System.IO;
 using System.Net.Mail;
 using System.Web.Security;
 using Microsoft.AspNet.Identity;
+using System.Linq;
+using PusherServer;
 
 namespace PetApplication.Controllers
 {
@@ -22,9 +24,21 @@ namespace PetApplication.Controllers
         [Authorize]
         public async Task<ActionResult> Index()
         {
+            PetAnimal petAnimals = new PetAnimal();
             ViewBag.Current = "PetAnimals";
+            //if (User.Identity.GetUserId() == petAnimals.CreateBy)
+            //{
+            //    var petAnimal = db.PetAnimal.Include(p => p.PetType);
+            //    return View(await petAnimal.ToListAsync());
+            //    //return View(db.PetAnimal.Where(x => x.CreateBy.Equals(User.Identity.GetUserId())).ToList());
+            //}
+            //return View();
+            var getUserID = User.Identity.GetUserId();
+            var adminID = "6123524f-662d-4677-8836-5c95da5e52c8";
             var petAnimal = db.PetAnimal.Include(p => p.PetType);
-            return View(await petAnimal.ToListAsync());
+            if(getUserID.Equals(adminID))
+                return View(await petAnimal.ToListAsync());
+            return View(await petAnimal.Where(x => x.CreateBy.Equals(getUserID)).ToListAsync());
         }
 
         // GET: PetAnimals/Details/5
@@ -174,6 +188,24 @@ namespace PetApplication.Controllers
             smtp.UseDefaultCredentials = false;
             smtp.Credentials = credential;
             smtp.Send(mail);
+        }
+
+        public ActionResult Comments(int? id)
+        {
+            var comments = db.Comment.Where(x => x.PetAnimal.Id == id).ToArray();
+            return Json(comments, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Comment(Comment data)
+        {
+            db.Comment.Add(data);
+            db.SaveChanges();
+            var options = new PusherOptions();
+            options.Cluster = "ap1";
+            var pusher = new Pusher("810929", "093c221464e0b9370411", "ddfeb0fbf4c35863680d", options);
+            ITriggerResult result = await pusher.TriggerAsync("asp_channel", "asp_event", data);
+            return Content("ok");
         }
 
         protected override void Dispose(bool disposing)

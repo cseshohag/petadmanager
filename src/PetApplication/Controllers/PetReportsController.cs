@@ -14,6 +14,7 @@ namespace PetApplication.Controllers
         [AllowAnonymous]
         public async Task<ActionResult> Index()
         {
+            ViewBag.Current = "PetReports";
             var petReport = db.PetReport.Include(p => p.PetAminal);
             return View(await petReport.ToListAsync());
         }
@@ -53,11 +54,14 @@ namespace PetApplication.Controllers
             {
                 db.PetReport.Add(petReport);
                 await db.SaveChangesAsync();
-                return RedirectToAction("Index");
+                //return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
 
             ViewBag.Id = new SelectList(db.PetAnimal, "Id", "Name", petReport.Id);
             return View(petReport);
+            //return RedirectToAction("View", "Home");
+            //return RedirectToAction("/Home/Index");
         }
 
         // GET: PetReports/Edit/5
